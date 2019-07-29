@@ -21,7 +21,7 @@ class NavisionCompanyFacade extends AbstractFacade implements NavisionCompanyFac
      *
      * @return \Generated\Shared\Transfer\CompanyResponseTransfer
      */
-    public function findCompanyByUuid(CompanyTransfer $companyTransfer): CompanyResponseTransfer
+    public function findCompanyByExternalReference(CompanyTransfer $companyTransfer): CompanyResponseTransfer
     {
         return $this->getFactory()->createCompanyReader()->findCompanyByExternalReference($companyTransfer);
     }

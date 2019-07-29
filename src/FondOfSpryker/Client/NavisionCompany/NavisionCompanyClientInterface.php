@@ -1,18 +1,21 @@
 <?php
 
-namespace FondOfSpryker\Zed\NavisionCompany\Business;
+namespace FondOfSpryker\Client\NavisionCompany;
 
 use Generated\Shared\Transfer\CompanyResponseTransfer;
 use Generated\Shared\Transfer\CompanyTransfer;
 
-interface NavisionCompanyFacadeInterface
+interface NavisionCompanyClientInterface
 {
     /**
      * Specification:
      * - Finds a company by external reference.
+     * - Makes zed request.
      * - Requires external reference field to be set in CompanyTransfer taken as parameter.
      *
      * @api
+     *
+     * {@internal will work if external reference field is provided.}
      *
      * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
      *
