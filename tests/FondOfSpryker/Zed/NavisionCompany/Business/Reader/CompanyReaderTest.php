@@ -1,0 +1,71 @@
+<?php
+
+namespace FondOfSpryker\Zed\NavisionCompany\Business\Reader;
+
+use Codeception\Test\Unit;
+use FondOfSpryker\Zed\NavisionCompany\Persistence\NavisionCompanyRepositoryInterface;
+use Generated\Shared\Transfer\CompanyResponseTransfer;
+use Generated\Shared\Transfer\CompanyTransfer;
+
+class CompanyReaderTest extends Unit
+{
+    /**
+     * @var \FondOfSpryker\Zed\NavisionCompany\Business\Reader\CompanyReader
+     */
+    protected $companyReader;
+
+    /**
+     * @var \PHPUnit\Framework\MockObject\MockObject|\FondOfSpryker\Zed\NavisionCompany\Persistence\NavisionCompanyRepositoryInterface
+     */
+    protected $navisionCompanyRepository;
+
+    /**
+     * @var \PHPUnit\Framework\MockObject\MockObject|\Generated\Shared\Transfer\CompanyTransfer
+     */
+    protected $companyTransferMock;
+
+    /**
+     * @var string
+     */
+    private $string;
+
+    /**
+     * @return void
+     */
+    protected function _before(): void
+    {
+        parent::_before();
+
+        $this->navisionCompanyRepository = $this->getMockBuilder(NavisionCompanyRepositoryInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->companyTransferMock = $this->getMockBuilder(CompanyTransfer::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->string = "string";
+
+        $this->companyReader = new CompanyReader($this->navisionCompanyRepository);
+    }
+
+    /**
+     * @return void
+     */
+    public function testFindCompanyByExternalReference(): void
+    {
+        $this->companyTransferMock->expects($this->atLeastOnce())
+            ->method('requireExternalReference')
+            ->willReturn($this->companyTransferMock);
+
+        $this->companyTransferMock->expects($this->atLeastOnce())
+            ->method('getExternalReference')
+            ->willReturn($this->string);
+
+        $this->navisionCompanyRepository->expects($this->atLeastOnce())
+            ->method('findCompanyByExternalReference')
+            ->willReturn($this->companyTransferMock);
+
+        $this->assertInstanceOf(CompanyResponseTransfer::class, $this->companyReader->findCompanyByExternalReference($this->companyTransferMock));
+    }
+}
