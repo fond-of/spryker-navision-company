@@ -18,8 +18,6 @@ class NavisionCompanyFactory extends AbstractFactory
     }
 
     /**
-     * @throws
-     *
      * @return \FondOfSpryker\Client\NavisionCompany\Dependency\Client\NavisionCompanyToZedRequestClientInterface
      */
     protected function getZedRequestClient(): NavisionCompanyToZedRequestClientInterface

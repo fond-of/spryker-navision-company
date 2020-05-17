@@ -18,8 +18,6 @@ class NavisionCompanyRepository extends AbstractRepository implements NavisionCo
      * @param string $externalReference
      *
      * @return \Generated\Shared\Transfer\CompanyTransfer|null
-     *
-     * @throws
      */
     public function findCompanyByExternalReference(string $externalReference): ?CompanyTransfer
     {
