@@ -12,7 +12,7 @@ use Spryker\Client\Kernel\AbstractClient;
 class NavisionCompanyClient extends AbstractClient implements NavisionCompanyClientInterface
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @api
      *
