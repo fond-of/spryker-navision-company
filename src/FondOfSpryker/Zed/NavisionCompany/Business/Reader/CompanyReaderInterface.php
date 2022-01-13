@@ -13,4 +13,11 @@ interface CompanyReaderInterface
      * @return \Generated\Shared\Transfer\CompanyResponseTransfer
      */
     public function findCompanyByExternalReference(CompanyTransfer $companyTransfer): CompanyResponseTransfer;
+
+    /**
+     * @param \Generated\Shared\Transfer\CompanyTransfer $company
+     *
+     * @return \Generated\Shared\Transfer\CompanyResponseTransfer
+     */
+    public function findCompanyByDebtorNumber(CompanyTransfer $companyTransfer): CompanyResponseTransfer;
 }

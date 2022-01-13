@@ -25,4 +25,18 @@ class NavisionCompanyFacade extends AbstractFacade implements NavisionCompanyFac
     {
         return $this->getFactory()->createCompanyReader()->findCompanyByExternalReference($companyTransfer);
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
+     *
+     * @return \Generated\Shared\Transfer\CompanyResponseTransfer
+     */
+    public function findCompanyByDebtorNumber(CompanyTransfer $companyTransfer): CompanyResponseTransfer
+    {
+        return $this->getFactory()->createCompanyReader()->findCompanyByDebtorNumber($companyTransfer);
+    }
 }

@@ -43,4 +43,27 @@ class CompanyReader implements CompanyReaderInterface
             ->setIsSuccessful(true)
             ->setCompanyTransfer($companyTransfer);
     }
+
+    /**
+     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
+     *
+     * @return \Generated\Shared\Transfer\CompanyResponseTransfer
+     */
+    public function findCompanyByDebtorNumber(CompanyTransfer $companyTransfer): CompanyResponseTransfer
+    {
+        $companyTransfer->requireDebtorNumber();
+
+        $companyTransfer = $this->navisionCompanyRepository->findCompanyByDebtorNumber(
+            $companyTransfer->getDebtorNumber()
+        );
+
+        $companyResponseTransfer = new CompanyResponseTransfer();
+        if (!$companyTransfer) {
+            return $companyResponseTransfer->setIsSuccessful(false);
+        }
+
+        return $companyResponseTransfer
+            ->setIsSuccessful(true)
+            ->setCompanyTransfer($companyTransfer);
+    }
 }

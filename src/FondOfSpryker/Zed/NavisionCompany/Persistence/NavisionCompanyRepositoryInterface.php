@@ -17,4 +17,16 @@ interface NavisionCompanyRepositoryInterface
      * @return \Generated\Shared\Transfer\CompanyTransfer|null
      */
     public function findCompanyByExternalReference(string $externalReference): ?CompanyTransfer;
+
+    /**
+     * Specification:
+     *  - Retrieve a company by CompanyTransfer::debtorNumber
+     *
+     * @api
+     *
+     * @param string $debtorNumber
+     *
+     * @return \Generated\Shared\Transfer\CompanyTransfer|null
+     */
+    public function findCompanyByDebtorNumber(string $debtorNumber): ?CompanyTransfer;
 }
