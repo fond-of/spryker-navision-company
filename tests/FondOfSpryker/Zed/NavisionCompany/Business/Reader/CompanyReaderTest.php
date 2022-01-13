@@ -68,4 +68,24 @@ class CompanyReaderTest extends Unit
 
         $this->assertInstanceOf(CompanyResponseTransfer::class, $this->companyReader->findCompanyByExternalReference($this->companyTransferMock));
     }
+
+    /**
+     * @return void
+     */
+    public function testFindCompanyByDebtorNumber(): void
+    {
+        $this->companyTransferMock->expects($this->atLeastOnce())
+            ->method('requireDebtorNumber')
+            ->willReturn($this->companyTransferMock);
+
+        $this->companyTransferMock->expects($this->atLeastOnce())
+            ->method('getDebtorNumber')
+            ->willReturn("xxxxx");
+
+        $this->navisionCompanyRepository->expects($this->atLeastOnce())
+            ->method('findCompanyByDebtorNumber')
+            ->willReturn($this->companyTransferMock);
+
+        $this->assertInstanceOf(CompanyResponseTransfer::class, $this->companyReader->findCompanyByDebtorNumber($this->companyTransferMock));
+    }
 }

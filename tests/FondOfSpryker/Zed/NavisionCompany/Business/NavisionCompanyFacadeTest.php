@@ -49,4 +49,12 @@ class NavisionCompanyFacadeTest extends Unit
     {
         $this->assertInstanceOf(CompanyResponseTransfer::class, $this->navisionCompanyFacade->findCompanyByExternalReference($this->companyTransferMock));
     }
+
+    /**
+     * @return void
+     */
+    public function testFindCompanyByDebtorNumber(): void
+    {
+        $this->assertInstanceOf(CompanyResponseTransfer::class, $this->navisionCompanyFacade->findCompanyByDebtorNumber($this->companyTransferMock));
+    }
 }

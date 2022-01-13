@@ -19,4 +19,17 @@ interface NavisionCompanyFacadeInterface
      * @return \Generated\Shared\Transfer\CompanyResponseTransfer
      */
     public function findCompanyByExternalReference(CompanyTransfer $companyTransfer): CompanyResponseTransfer;
+
+    /**
+     * Specification:
+     * - Finds a company by debtor number.
+     * - Requires debtor number field to be set in CompanyTransfer taken as parameter.
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
+     *
+     * @return \Generated\Shared\Transfer\CompanyResponseTransfer
+     */
+    public function findCompanyByDebtorNumber(CompanyTransfer $companyTransfer): CompanyResponseTransfer;
 }

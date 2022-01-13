@@ -35,4 +35,32 @@ class NavisionCompanyRepository extends AbstractRepository implements NavisionCo
             true
         );
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param string $debtorNumber
+     *
+     * @throws \Spryker\Zed\Propel\Business\Exception\AmbiguousComparisonException
+     *
+     * @return \Generated\Shared\Transfer\CompanyTransfer|null
+     */
+    public function findCompanyByDebtorNumber(string $debtorNumber): ?CompanyTransfer
+    {
+        $companyEntity = $this->getFactory()
+            ->getCompanyQuery()
+            ->filterByDebtorNumber($debtorNumber)
+            ->findOne();
+
+        if (!$companyEntity) {
+            return null;
+        }
+
+        return (new CompanyTransfer())->fromArray(
+            $companyEntity->toArray(),
+            true
+        );
+    }
 }
