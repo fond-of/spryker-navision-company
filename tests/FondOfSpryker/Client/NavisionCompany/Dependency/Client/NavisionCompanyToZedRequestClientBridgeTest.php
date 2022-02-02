@@ -43,7 +43,7 @@ class NavisionCompanyToZedRequestClientBridgeTest extends Unit
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->url = "test url";
+        $this->url = 'test url';
 
         $this->navisionCompanyToZedRequestClientBridge = new NavisionCompanyToZedRequestClientBridge($this->zedRequestClientMock);
     }
