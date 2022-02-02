@@ -44,7 +44,7 @@ class CompanyReaderTest extends Unit
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->string = "string";
+        $this->string = 'string';
 
         $this->companyReader = new CompanyReader($this->navisionCompanyRepository);
     }
@@ -80,7 +80,7 @@ class CompanyReaderTest extends Unit
 
         $this->companyTransferMock->expects($this->atLeastOnce())
             ->method('getDebtorNumber')
-            ->willReturn("xxxxx");
+            ->willReturn('xxxxx');
 
         $this->navisionCompanyRepository->expects($this->atLeastOnce())
             ->method('findCompanyByDebtorNumber')

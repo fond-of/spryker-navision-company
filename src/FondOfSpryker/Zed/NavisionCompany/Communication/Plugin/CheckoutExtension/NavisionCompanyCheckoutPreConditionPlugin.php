@@ -9,6 +9,10 @@ use Generated\Shared\Transfer\QuoteTransfer;
 use Spryker\Zed\CheckoutExtension\Dependency\Plugin\CheckoutPreConditionPluginInterface;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
+/**
+ * @method \FondOfSpryker\Zed\NavisionCompany\NavisionCompanyConfig getConfig()
+ * @method \FondOfSpryker\Zed\NavisionCompany\Business\NavisionCompanyFacade getFacade()
+ */
 class NavisionCompanyCheckoutPreConditionPlugin extends AbstractPlugin implements CheckoutPreConditionPluginInterface
 {
     /**

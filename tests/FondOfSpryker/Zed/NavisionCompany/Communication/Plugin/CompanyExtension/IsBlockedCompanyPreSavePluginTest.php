@@ -43,7 +43,7 @@ class IsBlockedCompanyPreSavePluginTest extends Unit
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->string = "string";
+        $this->string = 'string';
 
         $this->isBlockedCompanyPreSavePlugin = new IsBlockedCompanyPreSavePlugin();
     }
@@ -53,7 +53,10 @@ class IsBlockedCompanyPreSavePluginTest extends Unit
      */
     public function testPreSaveValidationNull(): void
     {
-        $this->assertInstanceOf(CompanyResponseTransfer::class, $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock));
+        $this->assertInstanceOf(
+            CompanyResponseTransfer::class,
+            $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock)
+        );
     }
 
     /**
@@ -69,6 +72,9 @@ class IsBlockedCompanyPreSavePluginTest extends Unit
             ->method('getBlockedFor')
             ->willReturn($this->string);
 
-        $this->assertInstanceOf(CompanyResponseTransfer::class, $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock));
+        $this->assertInstanceOf(
+            CompanyResponseTransfer::class,
+            $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock)
+        );
     }
 }

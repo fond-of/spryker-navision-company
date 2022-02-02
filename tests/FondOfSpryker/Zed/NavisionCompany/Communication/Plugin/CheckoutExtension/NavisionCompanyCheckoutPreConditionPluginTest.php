@@ -89,7 +89,7 @@ class NavisionCompanyCheckoutPreConditionPluginTest extends Unit
             ->method('addError')
             ->with(
                 static::callback(
-                    static function(CheckoutErrorTransfer $checkoutErrorTransfer) {
+                    static function (CheckoutErrorTransfer $checkoutErrorTransfer) {
                         return $checkoutErrorTransfer->getMessage() === NavisionCompanyConstants::MESSAGE_COMPANY_IS_BLOCKED;
                     }
                 )

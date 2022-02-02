@@ -20,6 +20,7 @@ class NavisionCompanyQuoteExpanderPluginTest extends Unit
      * @var \Generated\Shared\Transfer\CompanyTransfer|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $companyTransferMock;
+
     /**
      * @var \Generated\Shared\Transfer\QuoteTransfer|\PHPUnit\Framework\MockObject\MockObject
      */
@@ -73,7 +74,7 @@ class NavisionCompanyQuoteExpanderPluginTest extends Unit
             ->method('addValidationMessage')
             ->with(
                 static::callback(
-                    static function(MessageTransfer $messageTransfer) {
+                    static function (MessageTransfer $messageTransfer) {
                         return $messageTransfer->getType() === NavisionCompanyConstants::MESSAGE_TYPE_ERROR
                             && $messageTransfer->getValue() === NavisionCompanyConstants::MESSAGE_COMPANY_IS_BLOCKED;
                     }

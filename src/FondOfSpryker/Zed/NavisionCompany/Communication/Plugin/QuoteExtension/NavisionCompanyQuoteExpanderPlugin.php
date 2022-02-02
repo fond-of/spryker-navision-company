@@ -8,6 +8,10 @@ use Generated\Shared\Transfer\QuoteTransfer;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\QuoteExtension\Dependency\Plugin\QuoteExpanderPluginInterface;
 
+/**
+ * @method \FondOfSpryker\Zed\NavisionCompany\NavisionCompanyConfig getConfig()
+ * @method \FondOfSpryker\Zed\NavisionCompany\Business\NavisionCompanyFacade getFacade()
+ */
 class NavisionCompanyQuoteExpanderPlugin extends AbstractPlugin implements QuoteExpanderPluginInterface
 {
     /**
