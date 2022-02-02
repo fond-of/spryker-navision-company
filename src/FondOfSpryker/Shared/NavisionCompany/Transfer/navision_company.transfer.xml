@@ -18,7 +18,7 @@
 
     <transfer name="Quote">
         <property name="companyUser" type="CompanyUser"/>
-        <property name="validationMessages" type="Message[]"/>
+        <property name="validationMessages" type="Message[]" singular="validationMessage"/>
     </transfer>
 
     <transfer name="CompanyUser">
@@ -27,7 +27,7 @@
 
     <transfer name="CheckoutResponse">
         <property name="isSuccess" type="bool"/>
-        <property name="errors" type="CheckoutError[]"/>
+        <property name="errors" type="CheckoutError[]" singular="error"/>
     </transfer>
 
     <transfer name="CheckoutError">
