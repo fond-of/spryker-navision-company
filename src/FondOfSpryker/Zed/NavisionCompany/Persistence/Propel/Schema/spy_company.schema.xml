@@ -7,6 +7,10 @@
         <column name="is_blocked" type="BOOLEAN" required="true" defaultValue="false" />
         <column name="fk_locale" type="INTEGER"  required="false"/>
 
+        <foreign-key name="spy_company-fk_locale" foreignTable="spy_locale" phpName="SpyLocale" onDelete="CASCADE">
+            <reference foreign="id_locale" local="fk_locale"/>
+        </foreign-key>
+
         <unique name="spy_company-unique-external_reference">
             <unique-column name="external_reference"/>
         </unique>
