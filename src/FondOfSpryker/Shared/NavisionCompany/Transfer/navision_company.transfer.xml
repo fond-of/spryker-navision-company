@@ -15,6 +15,7 @@
         <property name="blockedFor" type="string"/>
         <property name="isBlocked" type="bool"/>
         <property name="fkLocale" type="int"/>
+        <property name="fkCurrency" type="int"/>
     </transfer>
 
     <transfer name="Quote">

@@ -6,9 +6,14 @@
         <column name="blocked_for" required="true" size="8" type="ENUM" valueSet="none,ship,invoice,both" defaultValue="none"/>
         <column name="is_blocked" type="BOOLEAN" required="true" defaultValue="false" />
         <column name="fk_locale" type="INTEGER"  required="false"/>
+        <column name="fk_currency" type="INTEGER"  required="false"/>
 
         <foreign-key name="spy_company-fk_locale" foreignTable="spy_locale" phpName="SpyLocale" onDelete="CASCADE">
             <reference foreign="id_locale" local="fk_locale"/>
+        </foreign-key>
+
+        <foreign-key name="spy_company-fk_currency" foreignTable="spy_currency" phpName="SpyCurrency" onDelete="CASCADE">
+            <reference foreign="id_currency" local="fk_currency"/>
         </foreign-key>
 
         <unique name="spy_company-unique-external_reference">

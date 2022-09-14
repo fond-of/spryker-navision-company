@@ -91,12 +91,12 @@ class NavisionCompanyCheckoutPreConditionPluginTest extends Unit
                 static::callback(
                     static function (CheckoutErrorTransfer $checkoutErrorTransfer) {
                         return $checkoutErrorTransfer->getMessage() === NavisionCompanyConstants::MESSAGE_COMPANY_IS_BLOCKED;
-                    }
-                )
+                    },
+                ),
             )->willReturn($this->checkoutResponseTransferMock);
 
         static::assertFalse(
-            $this->plugin->checkCondition($this->quoteTransferMock, $this->checkoutResponseTransferMock)
+            $this->plugin->checkCondition($this->quoteTransferMock, $this->checkoutResponseTransferMock),
         );
     }
 
@@ -116,7 +116,7 @@ class NavisionCompanyCheckoutPreConditionPluginTest extends Unit
             ->method('addError');
 
         static::assertTrue(
-            $this->plugin->checkCondition($this->quoteTransferMock, $this->checkoutResponseTransferMock)
+            $this->plugin->checkCondition($this->quoteTransferMock, $this->checkoutResponseTransferMock),
         );
     }
 
@@ -140,7 +140,7 @@ class NavisionCompanyCheckoutPreConditionPluginTest extends Unit
             ->method('addError');
 
         static::assertTrue(
-            $this->plugin->checkCondition($this->quoteTransferMock, $this->checkoutResponseTransferMock)
+            $this->plugin->checkCondition($this->quoteTransferMock, $this->checkoutResponseTransferMock),
         );
     }
 }

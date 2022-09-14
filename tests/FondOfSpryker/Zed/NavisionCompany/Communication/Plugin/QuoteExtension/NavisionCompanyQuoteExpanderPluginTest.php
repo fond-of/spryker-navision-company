@@ -77,13 +77,13 @@ class NavisionCompanyQuoteExpanderPluginTest extends Unit
                     static function (MessageTransfer $messageTransfer) {
                         return $messageTransfer->getType() === NavisionCompanyConstants::MESSAGE_TYPE_ERROR
                             && $messageTransfer->getValue() === NavisionCompanyConstants::MESSAGE_COMPANY_IS_BLOCKED;
-                    }
-                )
+                    },
+                ),
             )->willReturn($this->quoteTransferMock);
 
         static::assertEquals(
             $this->quoteTransferMock,
-            $this->plugin->expand($this->quoteTransferMock)
+            $this->plugin->expand($this->quoteTransferMock),
         );
     }
 
@@ -101,7 +101,7 @@ class NavisionCompanyQuoteExpanderPluginTest extends Unit
 
         static::assertEquals(
             $this->quoteTransferMock,
-            $this->plugin->expand($this->quoteTransferMock)
+            $this->plugin->expand($this->quoteTransferMock),
         );
     }
 
@@ -123,7 +123,7 @@ class NavisionCompanyQuoteExpanderPluginTest extends Unit
 
         static::assertEquals(
             $this->quoteTransferMock,
-            $this->plugin->expand($this->quoteTransferMock)
+            $this->plugin->expand($this->quoteTransferMock),
         );
     }
 }

@@ -32,7 +32,7 @@ class NavisionCompanyRepository extends AbstractRepository implements NavisionCo
 
         return (new CompanyTransfer())->fromArray(
             $companyEntity->toArray(),
-            true
+            true,
         );
     }
 
@@ -60,7 +60,7 @@ class NavisionCompanyRepository extends AbstractRepository implements NavisionCo
 
         return (new CompanyTransfer())->fromArray(
             $companyEntity->toArray(),
-            true
+            true,
         );
     }
 }
