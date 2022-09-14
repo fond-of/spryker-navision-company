@@ -31,7 +31,7 @@ class CompanyReader implements CompanyReaderInterface
         $companyTransfer->requireExternalReference();
 
         $companyTransfer = $this->navisionCompanyRepository->findCompanyByExternalReference(
-            $companyTransfer->getExternalReference()
+            $companyTransfer->getExternalReference(),
         );
 
         $companyResponseTransfer = new CompanyResponseTransfer();
@@ -54,7 +54,7 @@ class CompanyReader implements CompanyReaderInterface
         $companyTransfer->requireDebtorNumber();
 
         $companyTransfer = $this->navisionCompanyRepository->findCompanyByDebtorNumber(
-            $companyTransfer->getDebtorNumber()
+            $companyTransfer->getDebtorNumber(),
         );
 
         $companyResponseTransfer = new CompanyResponseTransfer();

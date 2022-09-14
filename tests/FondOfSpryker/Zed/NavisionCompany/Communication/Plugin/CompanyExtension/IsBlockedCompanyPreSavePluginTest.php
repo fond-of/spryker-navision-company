@@ -55,7 +55,7 @@ class IsBlockedCompanyPreSavePluginTest extends Unit
     {
         $this->assertInstanceOf(
             CompanyResponseTransfer::class,
-            $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock)
+            $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock),
         );
     }
 
@@ -74,7 +74,7 @@ class IsBlockedCompanyPreSavePluginTest extends Unit
 
         $this->assertInstanceOf(
             CompanyResponseTransfer::class,
-            $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock)
+            $this->isBlockedCompanyPreSavePlugin->preSaveValidation($this->companyResponseTransferMock),
         );
     }
 }
